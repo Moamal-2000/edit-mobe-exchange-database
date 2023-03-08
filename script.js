@@ -10,6 +10,17 @@ const loginButton = document.querySelector('main button.log-in-button')
 
 
 
+
+
+// Variables
+let isAlertVisible = false
+
+
+
+
+
+
+
 // Functions
 alert = (msg) => {
   instructorCustomAlert(msg);
@@ -41,7 +52,10 @@ function instructorCustomAlert(msg) {
   closeAlert.className = "fa-solid fa-x";
   closeAlert.id = "alertClose";
   alertBoxLabel.appendChild(closeAlert);
-  closeAlert.onclick = () => alertBox.remove()
+  closeAlert.onclick = () => {
+    alertBox.remove()
+    isAlertVisible = false
+  }
 
   // Create content's alert box
   const alertBoxContent = document.createElement("div");
@@ -140,4 +154,9 @@ function instructorCustomAlert(msg) {
 // Events
 refreshButton.onclick = () => location.reload()
 
-loginButton.onclick = () => alert()
+loginButton.onclick = () => {
+  if (!isAlertVisible) {
+    alert()
+    isAlertVisible = true
+  }
+}

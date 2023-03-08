@@ -152,6 +152,11 @@ main button.refresh-button {
   -webkit-user-select: text;
      -moz-user-select: text;
           user-select: text;
+  word-wrap: break-word;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #alertBox .label #alertClose {
